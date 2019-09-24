@@ -1,4 +1,4 @@
-package com.example.app.module;
+package com.example.app.module.index.controll;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +10,10 @@ import java.util.Map;
 @RestController
 public class IndexController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/indexDemo")
     public Object index(){
 
-        Map map=new HashMap<>();
+        Map<Object, Object> map=new HashMap<>();
         map.put("status","true");
         return map;
 
