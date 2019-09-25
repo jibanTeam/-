@@ -1,18 +1,23 @@
 package com.example.app.module.index.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 /**
  * system_test
  * @author 
  */
+@ApiModel(value = "测试数据test表实体")
 public class SystemTest implements Serializable {
+    @ApiModelProperty(value="用户唯一标识")
     private Integer id;
-
+    @ApiModelProperty(value="任务名称")
     private String taskName;
-
+    @ApiModelProperty(value="名字")
     private String name;
-
+    @ApiModelProperty(value="年龄")
     private Integer age;
 
     private static final long serialVersionUID = 1L;

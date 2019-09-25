@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class systemcontroller {
         @RequestMapping("/demo")
-        public String sample(Model model){
+        public String sample(){
 
             return "index";
 

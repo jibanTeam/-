@@ -1,5 +1,10 @@
 package com.example.app.module.index.server;
 
+import com.example.app.currency.ResultData;
+import com.example.app.module.index.entity.SystemTest;
+
+import java.util.List;
+
 public interface SystemTestServer {
-    Object getTask();
+    ResultData<List<SystemTest>> getTask(String name);
 }
