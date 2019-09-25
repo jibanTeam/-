@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.app.module.index.mapper.SystemTestDao">
-  <resultMap id="BaseResultMap" type="com.example.app.module.index.entity.SystemTest">
+<mapper namespace="com.example.app.module.index.mapper.IndexInformationMapper">
+  <resultMap id="BaseResultMap" type="com.example.app.module.index.entity.IndexInformation">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="task_name" jdbcType="VARCHAR" property="taskName" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="number_phone" jdbcType="VARCHAR" property="numberPhone" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
     <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="full_name" jdbcType="VARCHAR" property="fullName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, task_name, `name`, age
+    id, number_phone, `location`, age, full_name
   </sql>
-  <select id="selectByExample" parameterType="com.example.app.module.index.entity.SystemTestExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.app.module.index.entity.IndexInformationExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from system_test
+    from index_information
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,70 +94,79 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from system_test
+    from index_information
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from system_test
+    delete from index_information
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.app.module.index.entity.SystemTestExample">
-    delete from system_test
+  <delete id="deleteByExample" parameterType="com.example.app.module.index.entity.IndexInformationExample">
+    delete from index_information
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.app.module.index.entity.SystemTest" useGeneratedKeys="true">
-    insert into system_test (task_name, `name`, age
-      )
-    values (#{taskName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
-      )
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.app.module.index.entity.IndexInformation" useGeneratedKeys="true">
+    insert into index_information (number_phone, `location`, age, 
+      full_name)
+    values (#{numberPhone,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{fullName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.app.module.index.entity.SystemTest" useGeneratedKeys="true">
-    insert into system_test
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.app.module.index.entity.IndexInformation" useGeneratedKeys="true">
+    insert into index_information
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="taskName != null">
-        task_name,
+      <if test="numberPhone != null">
+        number_phone,
       </if>
-      <if test="name != null">
-        `name`,
+      <if test="location != null">
+        `location`,
       </if>
       <if test="age != null">
         age,
       </if>
+      <if test="fullName != null">
+        full_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="taskName != null">
-        #{taskName,jdbcType=VARCHAR},
+      <if test="numberPhone != null">
+        #{numberPhone,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
       </if>
       <if test="age != null">
         #{age,jdbcType=INTEGER},
       </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.app.module.index.entity.SystemTestExample" resultType="java.lang.Long">
-    select count(*) from system_test
+  <select id="countByExample" parameterType="com.example.app.module.index.entity.IndexInformationExample" resultType="java.lang.Long">
+    select count(*) from index_information
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update system_test
+    update index_information
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.taskName != null">
-        task_name = #{record.taskName,jdbcType=VARCHAR},
+      <if test="record.numberPhone != null">
+        number_phone = #{record.numberPhone,jdbcType=VARCHAR},
       </if>
-      <if test="record.name != null">
-        `name` = #{record.name,jdbcType=VARCHAR},
+      <if test="record.location != null">
+        `location` = #{record.location,jdbcType=VARCHAR},
       </if>
       <if test="record.age != null">
         age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.fullName != null">
+        full_name = #{record.fullName,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -164,37 +174,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update system_test
+    update index_information
     set id = #{record.id,jdbcType=INTEGER},
-      task_name = #{record.taskName,jdbcType=VARCHAR},
-      `name` = #{record.name,jdbcType=VARCHAR},
-      age = #{record.age,jdbcType=INTEGER}
+      number_phone = #{record.numberPhone,jdbcType=VARCHAR},
+      `location` = #{record.location,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      full_name = #{record.fullName,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.app.module.index.entity.SystemTest">
-    update system_test
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.app.module.index.entity.IndexInformation">
+    update index_information
     <set>
-      <if test="taskName != null">
-        task_name = #{taskName,jdbcType=VARCHAR},
+      <if test="numberPhone != null">
+        number_phone = #{numberPhone,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
+      <if test="location != null">
+        `location` = #{location,jdbcType=VARCHAR},
       </if>
       <if test="age != null">
         age = #{age,jdbcType=INTEGER},
       </if>
+      <if test="fullName != null">
+        full_name = #{fullName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.app.module.index.entity.SystemTest">
-    update system_test
-    set task_name = #{taskName,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.example.app.module.index.entity.IndexInformation">
+    update index_information
+    set number_phone = #{numberPhone,jdbcType=VARCHAR},
+      `location` = #{location,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      full_name = #{fullName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
-
 </mapper>

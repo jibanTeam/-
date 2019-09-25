@@ -1,5 +1,6 @@
 package com.example.app.module.index.mapper;
 
+import com.example.app.module.index.entity.IndexVo;
 import com.example.app.module.index.entity.SystemTest;
 import com.example.app.module.index.entity.SystemTestExample;
 import java.util.List;
@@ -27,4 +28,5 @@ public interface SystemTestDao {
     int updateByPrimaryKeySelective(SystemTest record);
 
     int updateByPrimaryKey(SystemTest record);
+
 }

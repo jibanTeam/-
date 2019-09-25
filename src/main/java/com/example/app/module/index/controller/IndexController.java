@@ -2,6 +2,8 @@ package com.example.app.module.index.controller;
 
 
 import com.example.app.currency.ResultData;
+import com.example.app.module.index.entity.IndexInformation;
+import com.example.app.module.index.entity.IndexVo;
 import com.example.app.module.index.entity.SystemTest;
 import com.example.app.module.index.server.SystemTestServer;
 import io.swagger.annotations.Api;
@@ -26,6 +28,12 @@ public class IndexController {
     public ResultData<List<SystemTest>> index(String name){
 
         return systemTestServer.getTask(name);
+
+    }
+
+    @RequestMapping(value = "/123",method=RequestMethod.GET)
+    public List<IndexInformation> indexTest(String l){
+        return systemTestServer.test(l);
 
     }
 
