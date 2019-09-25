@@ -1,7 +1,7 @@
 package com.example.app.currency;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiParam;
 import lombok.Data;
 
 @ApiModel(value = "通用返回实体")
