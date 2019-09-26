@@ -9,7 +9,7 @@ public class systemcontroller {
         @RequestMapping("/demo")
         public String sample(){
 
-            return "index";
+            return "landing";
 
         }
 
