@@ -92,6 +92,13 @@
       text-align: center;
       background: #2d3e50;
     }
+    .am-slides img{
+      height:500px;
+    }
+    .am-slider{
+      width: 80%;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -114,22 +121,33 @@
             更多功能 <span class="am-icon-caret-down"></span>
           </a>
           <ul class="am-dropdown-content">
-            <li class="am-dropdown-header">功能简介</li>
-            <li><a href="#">1. 默认样式</a></li>
-            <li><a href="#">2. 基础设置</a></li>
-            <li><a href="#">3. 文字排版</a></li>
-            <li><a href="#">4. 网格系统</a></li>
+<!--            <li class="am-dropdown-header">功能简介</li>-->
+            <li><a href="#">默认样式</a></li>
+            <li><a href="#">基础设置</a></li>
+            <li><a href="#">文字排版</a></li>
+            <li><a href="#">网格系统</a></li>
           </ul>
         </li>
+        <li class="am-dropdown" data-am-dropdown th:if="${session.userName}">
+          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;" >
+            [[${session.userName}]]      <span class="am-icon-caret-down" ></span>
+          </a>
+          <ul class="am-dropdown-content">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="/login/logOut">退出登录</a></li>
+          </ul>
+        </li>
+
       </ul>
 
-      <div class="am-topbar-right">
-        <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-asterisk"></span> 注册</button>
-      </div>
+
 
       <div class="am-topbar-right">
-        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-weixin"></span> 登录</button>
+        <a th:href="@{/register}"><button id="register" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-asterisk"></span> 注册/登录</button></a>
       </div>
+
+
+
     </div>
   </div>
 </header>
@@ -142,7 +160,23 @@
       <p>
         期待你的参与，共同打造HandSome-v1.0!
       </p>
-      <img th:src="@{/img/sg.jpg}" style="width: 200px;height: 200px;">
+
+      <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}'>
+        <ul class="am-slides">
+          <li>
+            <img th:src="@{/img/SG-lb3.jpg}">
+          </li>
+          <li>
+            <img th:src="@{/img/sg.jpg}" >
+          </li>
+          <li>
+            <img  th:src="@{/img/SG-lb2.jpg}">
+          </li>
+          <li>
+            <img th:src="@{/img/SG-lb1.jpg}">
+          </li>
+        </ul>
+      </div>
 
     </div>
   </div>
@@ -210,7 +244,7 @@
       <h2 class="hope-title">同我们一起打造你的前端框架</h2>
 
       <p>
-        在知识爆炸的年代，我们不愿成为知识的过客，拥抱开源文化，发挥社区的力量，参与到Amaze Ui开源项目能获得自我提升。
+        在知识爆炸的年代，我们不愿成为知识的过客，拥抱开源文化，发挥社区的力量，参与到handsome-man Ui开源项目能获得自我提升。
       </p>
     </div>
   </div>
@@ -241,7 +275,7 @@
         <div class="col-lg-6 col-md-8 col-sm-12">
           <h4 class="about-color">关于我们</h4>
 
-          <p>AllMobilize Inc (美通云动科技有限公司)
+          <p>HanDMobilize Inc (鸡办云动科技有限公司)
             由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。基于国际专利技术并结合最前沿的HTML5技术，云适配解决方案可以帮助企业快速将桌面版网站适配到各种移动设备终端的屏幕上，不仅显著地提高了企业网站的用户体验以及销售转化率，而且大幅度地节省了企业开发和维护移动网站的费用。</p>
           <h4 class="about-color">团队介绍</h4>
 
@@ -258,5 +292,9 @@
 </footer>
 <script th:src="@{/js/zepto.min.js}"></script>
 <script th:src="@{/js/amazeui.min.js}"></script>
+<script th:src="@{/js/minIndex.js}"></script>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 </body>
 </html>

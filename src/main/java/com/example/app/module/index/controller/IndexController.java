@@ -3,7 +3,6 @@ package com.example.app.module.index.controller;
 
 import com.example.app.currency.ResultData;
 import com.example.app.module.index.entity.IndexInformation;
-import com.example.app.module.index.entity.IndexVo;
 import com.example.app.module.index.entity.SystemTest;
 import com.example.app.module.index.server.SystemTestServer;
 import io.swagger.annotations.Api;
@@ -23,7 +22,7 @@ public class IndexController {
     @Resource
     private SystemTestServer systemTestServer;
 
-    @ApiOperation(value = "接口说明",httpMethod = "get",notes = "测试接口")
+    @ApiOperation(value = "接口说明",httpMethod = "GET",notes = "测试接口")
     @RequestMapping(value = "/indexDemo",method=RequestMethod.GET)
     public ResultData<List<SystemTest>> index(String name){
 

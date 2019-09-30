@@ -20,9 +20,9 @@ public class ResultData<T> {
         this.data = t;
     }
 
-    public ResultData(String message) {
+    public ResultData(String message,String status) {
         this.message = message;
-        this.status = "false";
+        this.status = status;
 
     }
 

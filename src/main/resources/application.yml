@@ -12,6 +12,20 @@ spring:
       enabled: true
       additional-paths: src/main/java
       exclude: WEB-INF/**
+  mail:
+    host: smtp.qq.com
+    password: ueyugjezkxisbgcf
+    username: 479634319@qq.com
+    port: 465
+    protocol: smtp
+    from: 479634319@qq.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

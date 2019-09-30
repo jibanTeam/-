@@ -27,7 +27,7 @@ public class SystemTestServerImpl implements SystemTestServer{
         SystemTestExample example =new SystemTestExample();
         SystemTestExample.Criteria criteria1 = example.createCriteria();
         if(name==null||"".equals(name))
-            return new ResultData<>("任务名称不能为空");
+            return new ResultData<>("任务名称不能为空","false");
         criteria1.andTaskNameLike("%"+name+"%");
         return new ResultData<>(systemTestDao.selectByExample(example));
     }

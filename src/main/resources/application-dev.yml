@@ -4,3 +4,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: admin123
+  redis:
+    host: localhost
+    port: 6379
+  session:
+    store-type: redis
+    timeout: PT30M
