@@ -114,6 +114,10 @@ $(document).ready(function(){
 
     });
 
+    $(".showIndex").click(function() {
+        window.location.href = "/demo";
+    });
+
     $('#code').bind('input propertychange', function()
     {
 

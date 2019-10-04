@@ -92,12 +92,14 @@
       text-align: center;
       background: #2d3e50;
     }
-    .am-slides img{
-      height:500px;
-    }
+
     .am-slider{
       width: 80%;
       margin: 0 auto;
+    }
+
+    .detail-mb{
+      width: 100%;
     }
   </style>
 </head>
@@ -115,28 +117,33 @@
     <div class="am-collapse am-topbar-collapse" id="collapse-head">
       <ul class="am-nav am-nav-pills am-topbar-nav">
         <li class="am-active"><a href="#">首页</a></li>
-        <li><a href="#">项目</a></li>
-        <li class="am-dropdown" data-am-dropdown>
-          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-            更多功能 <span class="am-icon-caret-down"></span>
-          </a>
-          <ul class="am-dropdown-content">
-<!--            <li class="am-dropdown-header">功能简介</li>-->
-            <li><a href="#">默认样式</a></li>
-            <li><a href="#">基础设置</a></li>
-            <li><a href="#">文字排版</a></li>
-            <li><a href="#">网格系统</a></li>
-          </ul>
-        </li>
+        <li><a href="#">招聘/工作</a></li>
+
         <li class="am-dropdown" data-am-dropdown th:if="${session.userName}">
           <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;" >
             [[${session.userName}]]      <span class="am-icon-caret-down" ></span>
           </a>
           <ul class="am-dropdown-content">
-            <li><a href="#">个人中心</a></li>
+            <li><a href="#">个人资料</a></li>
+            <li><a href="#">我的任务</a></li>
+            <li><a href="#">我的企业</a></li>
             <li><a href="/login/logOut">退出登录</a></li>
           </ul>
         </li>
+
+        <li class="am-dropdown" data-am-dropdown>
+          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+            企业中心 <span class="am-icon-caret-down"></span>
+          </a>
+          <ul class="am-dropdown-content">
+            <!--            <li class="am-dropdown-header">功能简介</li>-->
+            <li><a href="#">我的资料</a></li>
+            <li><a href="#">我的招聘</a></li>
+            <li><a href="#">任务管理</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">客服</a></li>
 
       </ul>
 
@@ -155,28 +162,25 @@
 <div class="get">
   <div class="am-g">
     <div class="col-lg-12">
-      <h1 class="get-title">JF-HC UI - HandSome-v1.0</h1>
+      <h1 class="get-title">鸡办平台(HandSomePlatform)</h1>
 
       <p>
-        期待你的参与，共同打造HandSome-v1.0!
+          为工作效率而生
       </p>
 
-      <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}'>
-        <ul class="am-slides">
-          <li>
-            <img th:src="@{/img/SG-lb3.jpg}">
-          </li>
-          <li>
-            <img th:src="@{/img/sg.jpg}" >
-          </li>
-          <li>
-            <img  th:src="@{/img/SG-lb2.jpg}">
-          </li>
-          <li>
-            <img th:src="@{/img/SG-lb1.jpg}">
-          </li>
-        </ul>
-      </div>
+<!--      <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}'>-->
+<!--        <ul class="am-slides">-->
+<!--          <li>-->
+<!--            <img th:src="@{/img/SG-lb3.jpg}">-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <img  th:src="@{/img/SG-lb2.jpg}">-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <img th:src="@{/img/SG-lb1.jpg}">-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
 
     </div>
   </div>
@@ -185,50 +189,49 @@
 <div class="detail">
   <div class="am-g am-container">
     <div class="col-lg-12">
-      <h2 class="detail-h2">One Web 、Any Device，期待和你一起去实现!</h2>
+      <h2 class="detail-h2">为效率而生,让人才触手可及!</h2>
 
       <div class="am-g">
         <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
 
           <h3 class="detail-h3">
-            <i class="am-icon-mobile am-icon-sm"></i>
-            为移动而生
+            平台简介
           </h3>
 
           <p class="detail-p">
-            Amaze UI 采用业内先进的 mobile first 理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+            鸡办平台专注于办公的效率，为企业/个人提供一个远程办公的解决方案，并定制了一系列标准和规范，
+            真正让互联网职员基于平台的标准及企业的管理下实现远程办公！
           </p>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
           <h3 class="detail-h3">
-            <i class="am-icon-cogs am-icon-sm"></i>
-            组件丰富，模块化
+            <i class="am-icon-shield am-icon-sm"></i>
+            安全,可靠
           </h3>
 
           <p class="detail-p">
-            Amaze UI 含近 20 个 CSS 组件、10 个 JS 组件，更有 17 款包含近 60 个主题的 Widgets，可快速构建界面出色、体验优秀的跨屏页面，大幅度提升你的开发效率。
+            平台确保所有求职者签署保密相关的协议，及身份信息的审核，并通过我方的初试审核。
+            通过当今最流行的非对称加密技术，平台将存储以公钥加密的数据，杜绝数据的泄露。
           </p>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
           <h3 class="detail-h3">
             <i class="am-icon-check-square-o am-icon-sm"></i>
-            本地化支持
+            起源于效率
           </h3>
 
           <p class="detail-p">
-            相比国外的前端框架，Amaze UI 专注解决中文排版优化问题，根据操作系统调整字体，实现最佳中文排版效果；针对国内主流浏览器及 App 内置浏览器提供更好的兼容性支持，为你节省大量兼容性调试时间。
+              据平台不完全调查统计，传统的工作方式对于90%工作者的而言，工作效率平均只有60.43%，即
+              除去路上的时间，对于1天工作10小时的人而言，只有6个小时的实际工作时间。反而，对于一些
+              私人交易，工作效率平均可达百分之90以上。
           </p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
-          <h3 class="detail-h3">
-            <i class="am-icon-send-o am-icon-sm"></i>
-            轻量级，高性能
-          </h3>
 
           <p class="detail-p">
-            Amaze UI 非常注重性能，基于轻量的 Zepto.js 开发，并使用 CSS3 来做动画交互，平滑、高效，更适合移动设备，让你的 Web 应用可以高速载入。
+              所以平台摒弃传统的薪资和工作方式，将每个工作点和薪资一一对应，融入生产环境当中，并加入
+              相应的约束，真正做到“能者多劳”，在减少企业的成本同时，给予求职者更高的工作效率和发展空间。
           </p>
         </div>
+
       </div>
     </div>
   </div>
@@ -241,10 +244,10 @@
       <hr class="am-article-divider am-show-sm-only hope-hr">
     </div>
     <div class="col-lg-8 col-md-6 col-sm-12">
-      <h2 class="hope-title">同我们一起打造你的前端框架</h2>
+      <h2 class="hope-title">共同打造我们的未来！</h2>
 
       <p>
-        在知识爆炸的年代，我们不愿成为知识的过客，拥抱开源文化，发挥社区的力量，参与到handsome-man Ui开源项目能获得自我提升。
+        不愿让自己工作带上枷锁，让自己会因为传统的工作方式止步于此。加入我们，我们会为您提供最好的解决方案！
       </p>
     </div>
   </div>
@@ -253,7 +256,7 @@
 <div class="about">
   <div class="am-g am-container">
     <div class="col-lg-12">
-      <h2 class="about-title about-color">Amaze UI 崇尚开放、自由，非常欢迎大家的参与</h2>
+      <h2 class="about-title about-color">鸡办平台欢迎大家的合作</h2>
 
       <div class="am-g">
         <div class="col-lg-6 col-md-4 col-sm-12">
@@ -275,11 +278,11 @@
         <div class="col-lg-6 col-md-8 col-sm-12">
           <h4 class="about-color">关于我们</h4>
 
-          <p>HanDMobilize Inc (鸡办云动科技有限公司)
+          <p>HandSomePlatform Inc (鸡办云动科技有限公司)
             由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立，旨在解决网页在不同移动设备屏幕上的适配问题。基于国际专利技术并结合最前沿的HTML5技术，云适配解决方案可以帮助企业快速将桌面版网站适配到各种移动设备终端的屏幕上，不仅显著地提高了企业网站的用户体验以及销售转化率，而且大幅度地节省了企业开发和维护移动网站的费用。</p>
           <h4 class="about-color">团队介绍</h4>
 
-          <p>AllMobilize Inc 获得了微软创投孵化器的支持，其领先科技已得到全球多家企业及机构的认可与信赖，客户包括全球500强企业、美国政府、国内政府机关、国内外上市公司、以及互联网标准化组织W3C。</p>
+          <p>HandSomePlatform Inc 获得了微软创投孵化器的支持，其领先科技已得到全球多家企业及机构的认可与信赖，客户包括全球500强企业、美国政府、国内政府机关、国内外上市公司、以及互联网标准化组织W3C。</p>
         </div>
       </div>
     </div>
@@ -287,8 +290,8 @@
 </div>
 
 <footer class="footer">
-  <p>© 2014 <a href="http://www.yunshipei.com" target="_blank">AllMobilize, Inc.</a> Licensed under <a
-      href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>. by the AmazeUI Team.</p>
+  <p>© 2019 <a href="http://www.yunshipei.com" target="_blank">HandSomePlatform, Inc.</a> Licensed under <a
+      href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>. by the HandSomePlatform Team.</p>
 </footer>
 <script th:src="@{/js/zepto.min.js}"></script>
 <script th:src="@{/js/amazeui.min.js}"></script>
