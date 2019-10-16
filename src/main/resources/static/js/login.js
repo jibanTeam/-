@@ -64,7 +64,7 @@ $(document).ready(function(){
                     messDom.css("color","red");
                 }else {
                     messDom.css("color","green");
-                    window.location.href = "/demo";
+                    window.location.href = "/public/homePage";
                 }
                 messDom.text(data.message);
 
@@ -88,7 +88,7 @@ $(document).ready(function(){
                     messDom.css("color","red");
                 }else {
                     messDom.css("color","green");
-                    window.location.href = "/demo";
+                    window.location.href = "/public/homePage";
                 }
                 messDom.text(data.message);
 
@@ -107,7 +107,7 @@ $(document).ready(function(){
                         messDom.css("color","#dd0001");
                     }else {
                         messDom.css("color","#71716f");
-                        window.location.href = "/demo";
+                        window.location.href = "/public/homePage";
                     }
 
                 }});
@@ -115,7 +115,7 @@ $(document).ready(function(){
     });
 
     $(".showIndex").click(function() {
-        window.location.href = "/demo";
+        window.location.href = "/public/homePage";
     });
 
     $('#code').bind('input propertychange', function()

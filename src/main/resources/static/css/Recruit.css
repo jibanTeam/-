@@ -1,0 +1,123 @@
+
+.collapse-left{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.position-show-left{
+    padding: 20px;
+    justify-content: center;
+}
+.position-show-right{
+    justify-content: center;
+}
+.position-show-left span{
+    padding-left: 15px;
+}
+.position-show-left a{
+    padding-left: 15px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+
+
+}
+.hover-red-ea:hover{
+    color: #ff3931
+}
+.padding-top-left{
+    padding: 20px 0 0 10px;
+}
+.collapse-left-values{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    font-size: 13px;
+    cursor:pointer;
+
+}
+.collapse-left-values div{
+    margin: 10px 10px 0 10px;
+
+}
+.collapse-left-values div:hover{
+    color: #d4434f;
+}
+.collapse-left-key-div{
+    padding: 10px 10px 0 20px;
+    color: #d45f67;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+.button-big button{
+    font-size: 20px;
+}
+.screen-div{
+    padding-left: 45px;
+    padding-right: 7px;
+}
+.overHide{
+    overflow: hidden;
+}
+.position-show-right a{
+    color: #2b2b2b;
+}
+.position-show-right a:hover{
+    color: #0c7cb5;
+}
+@media only screen and (min-width:1320px) {
+    .position-show{
+        justify-content: space-around;
+        margin:15px 60px 5px 60px;
+        border-bottom: 1px solid #ebebeb;
+        border-top: 1px solid #ebebeb;
+    }
+    .position-show-left span{
+        padding-left: 15px;
+    }
+    .minScreen{
+        display: none;
+    }
+    .tex1{
+        width: 350px;
+    }
+    .tex2{
+        width: 300px;
+    }
+    .tex3{
+        width: 250px;
+    }
+    .tex4{
+        width: 200px;
+    }
+    .tex5{
+        width: 150px;
+    }
+    .tex6{
+        width: 100px;
+    }
+    .tex7{
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width:1319px) {
+    .position-show{
+        justify-content: center;
+        margin:10px 10px 3px 10px;
+        border-bottom: 1px solid #ebebeb;
+        border-top: 1px solid #ebebeb;
+    }
+    .maxScreen{
+        display: none;
+    }
+}

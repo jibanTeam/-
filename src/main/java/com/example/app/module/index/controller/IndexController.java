@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Api(tags="用户模块操作接口",consumes="application/json", produces="application/json", protocols="http, https, ws, wss")
-@RequestMapping("/appointments")
 @RestController
 public class IndexController {
 
@@ -33,6 +33,14 @@ public class IndexController {
     @RequestMapping(value = "/123",method=RequestMethod.GET)
     public List<IndexInformation> indexTest(String l){
         return systemTestServer.test(l);
+
+    }
+
+    @RequestMapping("/")
+    public String index(HttpServletResponse response) throws Exception {
+
+        response.sendRedirect("/public/homePage");
+        return "register";
 
     }
 

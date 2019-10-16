@@ -1,7 +1,5 @@
-package com.example.app.utils;
+package com.example.app.utils.email;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
@@ -16,7 +14,7 @@ import java.io.File;
 
 
 @Component
-public class sendEmail implements sendEmailServer{
+public class sendEmail implements sendEmailServer {
 
     @Autowired
     private JavaMailSender mailSender;

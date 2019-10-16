@@ -1,4 +1,4 @@
-package com.example.app.utils;
+package com.example.app.utils.email;
 
 import javax.mail.MessagingException;
 /*

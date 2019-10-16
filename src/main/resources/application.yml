@@ -14,7 +14,7 @@ spring:
       exclude: WEB-INF/**
   mail:
     host: smtp.qq.com
-    password: ueyugjezkxisbgcf
+    password: jcrwjaievqypcbcj
     username: 479634319@qq.com
     port: 465
     protocol: smtp

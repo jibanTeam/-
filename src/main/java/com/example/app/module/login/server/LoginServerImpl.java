@@ -4,7 +4,7 @@ import com.example.app.currency.ResultData;
 import com.example.app.module.login.entity.*;
 import com.example.app.module.login.mapper.LoginEmailMapper;
 import com.example.app.module.login.mapper.LoginUserMapper;
-import com.example.app.utils.sendEmailServer;
+import com.example.app.utils.email.sendEmailServer;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -12,9 +12,7 @@ import org.thymeleaf.context.Context;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import javax.xml.crypto.Data;
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class LoginServerImpl implements LoginServer {

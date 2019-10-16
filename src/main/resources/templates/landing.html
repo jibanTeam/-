@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en"  th:fragment="static">
   <meta charset="UTF-8">
-  <title>Landing Page | Amaze UI Example</title>
+  <title>鸡办</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  <link rel="alternate icon" type="image/png" th:href="@{/i/favicon.png}">
+  <link rel="alternate icon" type="image/png" th:href="@{/i/chicken.png}">
   <link rel="stylesheet" th:href="@{/css/amazeui.min.css}"/>
   <style>
     .get {
@@ -40,9 +40,9 @@
       margin: 40px 0;
     }
 
-    .detail-h3 {
-      color: #1f8dd6;
-    }
+    /*.detail-h3 {*/
+    /*  color: #1f8dd6;*/
+    /*}*/
 
     .detail-p {
       color: #7f8c8d;
@@ -116,14 +116,15 @@
 
     <div class="am-collapse am-topbar-collapse" id="collapse-head">
       <ul class="am-nav am-nav-pills am-topbar-nav">
-        <li class="am-active"><a href="#">首页</a></li>
-        <li><a href="#">招聘/工作</a></li>
+        <li class="am-active"><a href="/public/homePage">首页</a></li>
+        <li><a href="/public/recruit">招聘/工作</a></li>
 
         <li class="am-dropdown" data-am-dropdown th:if="${session.userName}">
           <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;" >
-            [[${session.userName}]]      <span class="am-icon-caret-down" ></span>
+            个人中心   <span class="am-icon-caret-down" ></span>
           </a>
           <ul class="am-dropdown-content">
+            <li class="am-dropdown-header">[[${session.userName}]] </li>
             <li><a href="#">个人资料</a></li>
             <li><a href="#">我的任务</a></li>
             <li><a href="#">我的企业</a></li>
@@ -143,6 +144,19 @@
           </ul>
         </li>
 
+        <li class="am-dropdown" data-am-dropdown>
+          <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+            疑难解答 <span class="am-icon-caret-down"></span>
+          </a>
+          <ul class="am-dropdown-content">
+            <!--            <li class="am-dropdown-header">功能简介</li>-->
+            <li><a href="#">平台规范</a></li>
+            <li><a href="#">问题求助</a></li>
+            <li><a href="#">保密协议</a></li>
+            <li><a href="#">流程详解</a></li>
+          </ul>
+        </li>
+
         <li><a href="#">客服</a></li>
 
       </ul>
@@ -150,7 +164,7 @@
 
 
       <div class="am-topbar-right">
-        <a th:href="@{/register}"><button id="register" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-asterisk"></span> 注册/登录</button></a>
+        <a href="/public/register"><button id="register" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-asterisk"></span> 注册/登录</button></a>
       </div>
 
 
@@ -164,7 +178,7 @@
     <div class="col-lg-12">
       <h1 class="get-title">鸡办平台(HandSomePlatform)</h1>
 
-      <p>
+      <p style="color: #d4d4d3">
           为工作效率而生
       </p>
 
@@ -216,7 +230,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
           <h3 class="detail-h3">
-            <i class="am-icon-check-square-o am-icon-sm"></i>
+            <i class="am-icon-cube am-icon-sm"></i>
             起源于效率
           </h3>
 
@@ -232,6 +246,19 @@
           </p>
         </div>
 
+        <div class="col-lg-3 col-md-6 col-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-comments-o am-icon-sm"></i>
+            更加优秀的团队
+          </h3>
+
+          <p class="detail-p">
+            平台十分重视团队协调合作，加入了多人会议，实时语音，实时屏幕分享等，让团队的管理变得
+            无比简单，强大！
+          </p>
+
+        </div>
+
       </div>
     </div>
   </div>
@@ -240,7 +267,7 @@
 <div class="hope">
   <div class="am-g am-container">
     <div class="col-lg-4 col-md-6 col-sm-12 hope-img">
-      <img th:src="@{i/examples/landing.png}" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}">
+      <img th:src="@{/i/examples/landing.png}" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}">
       <hr class="am-article-divider am-show-sm-only hope-hr">
     </div>
     <div class="col-lg-8 col-md-6 col-sm-12">
@@ -267,7 +294,7 @@
             <label for="email" class="about-color">你的邮箱</label>
             <input id="email" type="email">
             <br/>
-            <label for="message" class="about-color">你的留言</label>
+            <label for="message" class="about-color">详细说明</label>
             <textarea id="message"></textarea>
             <br/>
             <button type="submit" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-check"></i> 提 交</button>

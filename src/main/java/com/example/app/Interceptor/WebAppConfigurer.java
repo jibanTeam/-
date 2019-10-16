@@ -24,7 +24,7 @@ public class WebAppConfigurer implements WebMvcConfigurer   {
                 "/js/**",
                 "/logout",
                 "/register",
-                "/demo");       //添加不拦截路径
+                "/public/**");       //添加不拦截路径
 //        super.addInterceptors(registry);
 
 

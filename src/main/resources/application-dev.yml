@@ -10,3 +10,5 @@ spring:
   session:
     store-type: redis
     timeout: PT30M
+server:
+  port: 80

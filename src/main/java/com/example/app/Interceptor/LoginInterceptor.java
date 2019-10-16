@@ -32,7 +32,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
 
         }
-        response.sendRedirect("/register");
+        response.sendRedirect("/public/register");
         return false;
 
     }
