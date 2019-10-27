@@ -12,6 +12,7 @@ public class IndexVo {
     @ApiModelProperty(value="用户唯一标识")
     private Integer id;
 
+    @ApiModelProperty(value="任务名字")
     private String taskName;
 
     private String name;
