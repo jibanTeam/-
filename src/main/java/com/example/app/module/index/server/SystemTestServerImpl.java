@@ -41,5 +41,13 @@ public class SystemTestServerImpl implements SystemTestServer{
         return  indexInformationMapper.selectByExample(example);
     }
 
+    @Override
+    public List<IndexInformation> cg(String l) {
+        IndexInformationExample example =new IndexInformationExample();
+        IndexInformationExample.Criteria criteria1 = example.createCriteria();
+        criteria1.andIdEqualTo(2);
+        return indexInformationMapper.selectByExample(example);
+    }
+
 
 }

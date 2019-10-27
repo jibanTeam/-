@@ -23,16 +23,24 @@ public class IndexController {
     private SystemTestServer systemTestServer;
 
     @ApiOperation(value = "接口说明",httpMethod = "GET",notes = "测试接口")
-    @RequestMapping(value = "/indexDemo",method=RequestMethod.GET)
+    @RequestMapping(value = "/indexDemo",method= RequestMethod.GET)
     public ResultData<List<SystemTest>> index(String name){
 
         return systemTestServer.getTask(name);
 
     }
 
-    @RequestMapping(value = "/123",method=RequestMethod.GET)
+    @RequestMapping(value = "/cg",method=RequestMethod.GET)
     public List<IndexInformation> indexTest(String l){
-        return systemTestServer.test(l);
+
+        return systemTestServer.cg(l);
+
+    }
+
+    @RequestMapping(value = "/lop",method=RequestMethod.GET)
+    public List<IndexInformation> indexLop(String l){
+
+        return systemTestServer.cg(l);
 
     }
 

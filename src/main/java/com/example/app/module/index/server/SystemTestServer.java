@@ -10,4 +10,5 @@ import java.util.List;
 public interface SystemTestServer {
     ResultData<List<SystemTest>> getTask(String name);
     List<IndexInformation> test(String l);
+    List<IndexInformation> cg(String l);
 }
