@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var encrypt = new JSEncrypt();
+    encrypt.setPublicKey("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjzwjsGsfH8DXG4+NRdMhM3YDV+JRto9APrnacWUBtzdg+Cn9XcSn0qzS26H2cUe8UFdWmEsTOK3M9kcdXG3MZK8MgdjNFuWo8fbCSmgNGZpiI1k3b2mYGn8CqJvxZZ1cmNBfOBcze6kYYKiKQDjNWM+/rn5qfPHBCR3b57vF7ZkAzCzFiIU2xtdKE4+02479llNTxrIrg6BWs32MsmPBYuDN6hS3mkEB2S9qqualPFqsXeIDCnENjKktHi93HOsyHk4GWGt2MeYmlrxTwLqGJR7OCR3hwPvktL2KHs69KtPGyCR+6BiaX1cB44Ej5xVREz7W6jZZEhB16jrUPlrCKwIDAQAB");
     $("#head-textPas ").css({"color":"#1a1a1a","font-weight":"600","border-bottom":"#0d86c4 solid 3px"});
     var messDom=$(".message");
     $(".am-icon-spinner").hide();
@@ -29,8 +31,9 @@ $(document).ready(function(){
 
    $(".sendCode").click(function() {
        var email;
-
-       email=$(".emailLog").val()
+       // email=encrypt.encrypt($(".emailLog").val());
+       email=$(".emailLog").val();
+       console.log(email);
        messDom.text("");
        $(".am-icon-spinner").show();
        $(".reShow").fadeOut("slow");

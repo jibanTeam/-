@@ -1,6 +1,7 @@
 package com.example.app.module.index.controller;
 
 
+import cn.shuibo.annotation.Encrypt;
 import com.example.app.currency.ResultData;
 import com.example.app.module.index.entity.IndexInformation;
 import com.example.app.module.index.entity.SystemTest;
@@ -30,8 +31,9 @@ public class IndexController {
 
     }
 
+    @Encrypt
     @RequestMapping(value = "/cg",method=RequestMethod.GET)
-    public List<IndexInformation> indexTest(String l){
+    public Object indexTest(String l){
 
         return systemTestServer.cg(l);
 

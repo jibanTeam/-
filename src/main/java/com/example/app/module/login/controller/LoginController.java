@@ -1,6 +1,8 @@
 package com.example.app.module.login.controller;
 
 
+import cn.shuibo.annotation.Decrypt;
+import cn.shuibo.annotation.Encrypt;
 import com.example.app.currency.ResultData;
 import com.example.app.module.login.entity.LoginUser;
 import com.example.app.module.login.entity.loginVo;
@@ -38,10 +40,12 @@ public class LoginController {
         }
     }
 
+
+    @Decrypt
     @ApiOperation(value = "接口说明",httpMethod = "GET",notes = "发送邮件验证码接口")
     @RequestMapping(value = "/emailSend",method= RequestMethod.GET)
     public ResultData emailTest(String e){
-
+        System.out.println(e);
         return loginServer.sendCode(e);
 
     }
