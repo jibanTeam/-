@@ -62,6 +62,7 @@ public class LoginController {
     @RequestMapping(value = "/rentLogin",method= RequestMethod.POST)
     public ResultData userLogin(@Valid loginVo entity, HttpServletRequest request){
 
+        System.out.println(entity);
         return loginServer.userLogin(entity,request);
 
     }
